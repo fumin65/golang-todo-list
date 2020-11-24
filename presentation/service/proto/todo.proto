@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package interface.api;
+option go_package = ".;service";
+
+import "google/protobuf/timestamp.proto";
+
+message Todo {
+  string id = 1;
+  string title = 2;
+  enum State {
+    UNSPECIFIED = 0;
+    NOT_COMPLETED = 1;
+    COMPLETED = 2;
+  }
+  State state = 3;
+  google.protobuf.Timestamp created_at = 4;
+}
+
+message CreateTodoRequest {
+  string title = 1;
+}
+
+message FetchAllTodosRequest {}
+
+message FetchAllTodosResponse {
+  repeated Todo todos = 1;
+}
+
+service TodoService {
+  rpc CreateTodo(CreateTodoRequest) returns (Todo);
+  rpc FetchAllTodos(FetchAllTodosRequest) returns (FetchAllTodosResponse);
+}
