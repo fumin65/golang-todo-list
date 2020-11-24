@@ -4,15 +4,15 @@ package provider
 
 import (
 	"github.com/google/wire"
-	"todo-api/application/usecase/todo"
+	"todo-api/application/usecase"
 )
 
-func InitializeCreateTodoUseCase() *todo.CreateTodoUseCase {
-	wire.Build(todo.NewCreateTodoUseCase, NewTodoRepository)
-	return &todo.CreateTodoUseCase{}
+func InitializeCreateTodoUseCase() *usecase.CreateTodoUseCase {
+	wire.Build(usecase.NewCreateTodoUseCase, NewTodoRepository)
+	return &usecase.CreateTodoUseCase{}
 }
 
-func InitializeFetchAllTodosUseCase() *todo.FetchAllTodosUseCase {
-	wire.Build(todo.NewFetchAllTodosUseCase, NewTodoRepository)
-	return &todo.FetchAllTodosUseCase{}
+func InitializeFetchAllTodosUseCase() *usecase.FetchAllTodosUseCase {
+	wire.Build(usecase.NewFetchAllTodosUseCase, NewTodoRepository)
+	return &usecase.FetchAllTodosUseCase{}
 }

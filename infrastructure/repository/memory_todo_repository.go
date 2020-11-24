@@ -2,7 +2,7 @@ package repository
 
 import (
 	"github.com/google/uuid"
-	model "todo-api/domain/model/todo"
+	"todo-api/domain/model"
 )
 
 type MemoryTodoRepository struct {

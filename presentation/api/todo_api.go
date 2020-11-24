@@ -4,7 +4,7 @@ import (
 	"github.com/labstack/echo"
 	"net/http"
 	"todo-api/di/provider"
-	model "todo-api/domain/model/todo"
+	"todo-api/domain/model"
 	"todo-api/presentation/api/req"
 	"todo-api/presentation/api/res"
 )
@@ -45,7 +45,7 @@ func FetchAllTodo(c echo.Context) error {
 	return c.JSON(http.StatusOK, resTodos)
 }
 
-func toTextValue(state model.State) string {
+func toTextValue(state model.TodoState) string {
 	switch state {
 	case model.Completed:
 		return "完了"

@@ -1,18 +1,19 @@
-package todo
+package model
 
 import "time"
 
-type State int
+type TodoState int
+type TodoId string
 
 const (
-	Completed    State = iota
-	NotCompleted State = iota
+	Completed    TodoState = iota
+	NotCompleted TodoState = iota
 )
 
 type Todo struct {
 	id        TodoId
 	title     string
-	state     State
+	state     TodoState
 	createdAt time.Time
 }
 
@@ -28,7 +29,7 @@ func (t *Todo) CreateAt() time.Time {
 	return t.createdAt
 }
 
-func (t *Todo) State() State {
+func (t *Todo) State() TodoState {
 	return t.state
 }
 

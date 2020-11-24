@@ -6,19 +6,19 @@
 package provider
 
 import (
-	"todo-api/application/usecase/todo"
+	"todo-api/application/usecase"
 )
 
 // Injectors from wire.go:
 
-func InitializeCreateTodoUseCase() *todo.CreateTodoUseCase {
+func InitializeCreateTodoUseCase() *usecase.CreateTodoUseCase {
 	todoRepository := NewTodoRepository()
-	createTodoUseCase := todo.NewCreateTodoUseCase(todoRepository)
+	createTodoUseCase := usecase.NewCreateTodoUseCase(todoRepository)
 	return createTodoUseCase
 }
 
-func InitializeFetchAllTodosUseCase() *todo.FetchAllTodosUseCase {
+func InitializeFetchAllTodosUseCase() *usecase.FetchAllTodosUseCase {
 	todoRepository := NewTodoRepository()
-	fetchAllTodosUseCase := todo.NewFetchAllTodosUseCase(todoRepository)
+	fetchAllTodosUseCase := usecase.NewFetchAllTodosUseCase(todoRepository)
 	return fetchAllTodosUseCase
 }

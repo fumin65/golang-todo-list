@@ -1,6 +1,6 @@
-package todo
+package usecase
 
-import model "todo-api/domain/model/todo"
+import "todo-api/domain/model"
 
 type CreateTodoUseCase struct {
 	repository model.TodoRepository

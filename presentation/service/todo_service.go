@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/golang/protobuf/ptypes"
 	"todo-api/di/provider"
-	model "todo-api/domain/model/todo"
+	"todo-api/domain/model"
 )
 
 type TodoServiceImpl struct {
@@ -53,7 +53,7 @@ func (t *TodoServiceImpl) FetchAllTodos(c context.Context, req *FetchAllTodosReq
 	}, nil
 }
 
-func toProtoValue(state model.State) Todo_State {
+func toProtoValue(state model.TodoState) Todo_State {
 	switch state {
 	case model.Completed:
 		return Todo_COMPLETED

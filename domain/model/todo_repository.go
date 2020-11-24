@@ -1,4 +1,4 @@
-package todo
+package model
 
 type TodoRepository interface {
 	AllTodos() []*Todo

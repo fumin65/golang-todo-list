@@ -1,12 +1,12 @@
 package provider
 
 import (
-	"todo-api/domain/model/todo"
+	"todo-api/domain/model"
 	"todo-api/infrastructure/repository"
 )
 
 var repo = &repository.MemoryTodoRepository{}
 
-func NewTodoRepository() todo.TodoRepository {
+func NewTodoRepository() model.TodoRepository {
 	return repo
 }
